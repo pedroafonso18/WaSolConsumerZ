@@ -16,7 +16,6 @@ pub fn build(b: *std.Build) void {
 
     exe.root_module.addImport("dotenv", dotenv.module("dotenv"));
 
-    exe.linkLibrary(dotenv.artifact("dotenv"));
     const run_exe = b.addRunArtifact(exe);
 
     const run_step = b.step("run", "Run the application");
